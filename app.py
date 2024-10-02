@@ -27,10 +27,10 @@ class NotEqual(tf.keras.layers.Layer):
         return tf.not_equal(inputs[0], inputs[1])
 
 with custom_object_scope({'NotEqual': NotEqual, 'SeqSelfAttention': SeqSelfAttention}):
-    model = load_model('E:/Projects/Image Caption Generator/StreamLIt/image_caption_generator_model.h5')
+    model = load_model('image_caption_generator_model.h5')
 
 # Load the tokenizer
-with open('E:/Projects/Image Caption Generator/StreamLIt/tokenizer_1', 'rb') as tokenizer_file:
+with open('train_tokenizer.pkl', 'rb') as tokenizer_file:
     tokenizer = pickle.load(tokenizer_file)
     
 # Set custom web page title
